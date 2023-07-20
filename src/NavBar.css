@@ -1,0 +1,67 @@
+.container-menu{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin: 0 10px;
+    width: 250px;
+    height: 70px;
+}
+.logo-inicio {
+    width: 120px;
+    height: 70px;
+}
+.inicio {
+    display: flex;
+    align-items: center;
+}
+.logo {
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+}
+.carrito {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin: 0 10px;
+    width: 250px;
+    height: 70px;
+}
+.logo-carrito {
+    width: 40px;
+    height: 40px;
+}
+
+.container-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 70px;
+    background-color: white;
+    border-bottom: solid 2px;
+    border-color: #840705;
+}
+
+.brand-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 70px;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.numero-carrito {
+    font-size: 25px;
+    margin: 10px;
+}
+
+.greeting {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: 600;
+}
