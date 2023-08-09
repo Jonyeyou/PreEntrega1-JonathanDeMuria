@@ -9,6 +9,8 @@
 .logo-inicio {
     width: 120px;
     height: 70px;
+    display: flex;
+    
 }
 .inicio {
     display: flex;

@@ -4,6 +4,8 @@ import CartWidget from './CartWidget'
 import { Menu, MenuButton, MenuList, MenuItem, Button } from '@chakra-ui/react'
 import { ChevronDownIcon} from '@chakra-ui/icons'
 import logoInicio from '../assets/logo-inicio.png'
+import { Link } from 'react-router-dom'
+
 const NavBar = () => {
 
 
@@ -12,26 +14,36 @@ const NavBar = () => {
       <div className='container-navbar'>
         <div className='container-menu'>
           <div className='logo-inicio'>
-            <a className='inicio' href='../index.html'>
+            <Link className='inicio' to={"/"}>
               <img className='logo' src={logoInicio} alt="logo Inicio"/>
               <p className='p-inicio'>Inicio</p>
-            </a>
+            </Link>
           </div>
           <Menu isLazy>
               <MenuButton>
                 Menu
               </MenuButton>
             <MenuList>
-              <MenuItem>Productos</MenuItem>
-              <MenuItem>Soporte</MenuItem>
-              <MenuItem>Contacto</MenuItem>
+              <Link to={`/category/${"procesador"}`}>
+              <MenuItem>Procesadores</MenuItem>
+              </Link>
+              <Link to={`/category/${"memorias"}`}>
+              <MenuItem>Memorias Ram</MenuItem>
+              </Link>
+              <Link to={`/category/${"placa de video"}`}>
+              <MenuItem>Placas de video</MenuItem>
+              </Link>
             </MenuList>
           </Menu>
         </div>
         <div className='brand-container'>
-          <a className='brand' href='../index.html'>Tecno Store</a>
+          <Link to={"/"}>
+          <a className='brand'>Tecno Store</a>
+          </Link>
         </div>
+      <Link to={"/cart"}>
       <CartWidget className='carrito'/>
+      </Link>
       </div>
     </>
   )
