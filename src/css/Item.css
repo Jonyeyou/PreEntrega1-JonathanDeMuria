@@ -1,0 +1,21 @@
+#card {
+    display: flex;
+    margin: 20px;
+    border-radius: 8px;
+    border: solid 2px;
+    border-color: #840705;
+}
+
+#cardName {
+    text-align: center;
+    margin: 20px;
+}
+#divBtn {
+    display: flex;
+    justify-content: center;
+}
+#cardBtn {
+    border-radius: 8px;
+    border: solid 2px;
+    border-color: black;
+}

@@ -1,7 +1,8 @@
 import Item from './Item'
-import '../ItemList.css'
+import '../css/ItemList.css'
 
 const ItemList = ({product}) => {
+  console.log(product)
   return (
     <div className='cardContainer'>
       {product.map((p) => {
@@ -12,6 +13,7 @@ const ItemList = ({product}) => {
           description = {p.description}
           stock = {p.stock}
           category = {p.category}
+          image = {p.image}
           />
         )
       })

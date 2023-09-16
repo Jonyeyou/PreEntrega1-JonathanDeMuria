@@ -1,5 +1,5 @@
 import React from 'react'
-import '../NavBar.css'
+import '../css/NavBar.css'
 import CartWidget from './CartWidget'
 import { Menu, MenuButton, MenuList, MenuItem, Button } from '@chakra-ui/react'
 import { ChevronDownIcon} from '@chakra-ui/icons'

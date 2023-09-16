@@ -5,6 +5,7 @@ import ItemDetailContainer from './components/ItemDetailContainer'
 import Cart from './components/Cart'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import ShoppingCartContext from './context/ShoppingCartContext'
+import SendOrder from './components/SendOrder'
 
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
         <Route exact path='/item/:id' element={<ItemDetailContainer/>}/>
         <Route exact path='/category/:category' element={<ItemListContainer/>}/>
         <Route exact path='/cart' element={<Cart/>}/>
+        <Route exact path='/Terminar-la-Compra' element={<SendOrder/>}/>
       </Routes>
     </ShoppingCartContext>
     </BrowserRouter>

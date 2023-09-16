@@ -1,0 +1,22 @@
+#container {
+    display: flex;
+    justify-content: center;
+}
+#card {
+    display: flex;
+    justify-content: center;
+}
+#cardBody {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+#price {
+    text-decoration: none;
+    text-align: center;
+    
+}
+#cardFooter {
+    display: flex;
+    justify-content: center;
+}
