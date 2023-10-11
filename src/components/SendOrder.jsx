@@ -4,6 +4,7 @@ import { CartContext } from "../context/ShoppingCartContext"
 import { useParams } from "react-router-dom"
 import { filter, Image } from "@chakra-ui/react"
 import '../css/sendOrder.css'
+import Swal from "sweetalert2"
 
 
 const SendOrder = () => {
@@ -20,8 +21,26 @@ const SendOrder = () => {
     const db = getFirestore()
 
     const handleSubmit = (e) => {
-        e.preventDefault()
-        addDoc(ordersCollection, order).then(({ id }) => setOrderId(id))
+        if(cart.length > 0) {
+            e.preventDefault()
+            addDoc(ordersCollection, order).then(({ id }) => setOrderId(id))
+            Swal.fire({
+                position: 'center',
+                icon: 'succes',
+                title: `Su compra a sido Exitosa, Recuerde guardar su Numero de orden`,
+                showConfirmButton: true,
+                timer: 4000
+            })
+        } else {
+            event.preventDefault();
+            Swal.fire({
+                position: 'center',
+                icon: 'error',
+                title: 'No se a realizado la compra, No hay productos en el carrito.',
+                showConfirmButton: true,
+                timer: 4000
+            })
+        }
     }
 
     const ordersCollection = collection(db, "orden")
@@ -47,10 +66,13 @@ const SendOrder = () => {
                 <input className="input" required type="email" placeholder="Email"
                     onChange={(e) => setEmail(e.target.value)}
                     />
+                <input className="input" required type="email" placeholder="Confirmar Email"
+                    onChange={(e) => setEmail(e.target.value)}
+                    />
                 <input className="input" required type="number" placeholder="Numero de Telefono"
                     onChange={(e) => setNum(e.target.value)}
                     />
-                <button id="btnComprar" type="submit">Comprar</button>
+                <button id="btnComprar" >Comprar</button>
             </form>
         </div>
         <p id="textNorden">Numero de orden: {orderId}</p>
