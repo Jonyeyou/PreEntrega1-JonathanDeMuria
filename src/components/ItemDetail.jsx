@@ -21,14 +21,12 @@ const ItemDetail = ({ product }) => {
     }, []);
 console.log(producto);
     const filterProducts = producto.filter((producto) => producto.id == id)
-
     return (
     <div>
         {filterProducts.map((product) =>{
             return (
-                <>
-                <div id='container'>
-                <Card maxW='sm'id='card'>
+                <div key={product.id} id='container'>
+                <Card key={product.id} maxW='sm'id='card'>
                     <CardBody id='cardBody'>
                         <Image
                             src={product.image}
@@ -56,7 +54,6 @@ console.log(producto);
                     </CardFooter>
                 </Card>
                 </div>
-                </>
             )
         })
     }

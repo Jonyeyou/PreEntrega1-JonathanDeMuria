@@ -40,8 +40,9 @@ const cart = () => {
     <div id="containerCart">
     {filterProducts.map ((p) =>{
       return (
-        <div id="containerCardCart">
+        <div key={p.id} id="containerCardCart">
           <Card
+          key={p.id}
           direction={{ base: 'column', sm: 'row' }}
           overflow='hidden'
           variant='outline'

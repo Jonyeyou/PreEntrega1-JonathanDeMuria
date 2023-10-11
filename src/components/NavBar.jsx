@@ -1,7 +1,7 @@
 import React from 'react'
 import '../css/NavBar.css'
 import CartWidget from './CartWidget'
-import { Menu, MenuButton, MenuList, MenuItem, Button } from '@chakra-ui/react'
+import { Menu, MenuButton, MenuList, MenuItem, Button, Text, Image } from '@chakra-ui/react'
 import { ChevronDownIcon} from '@chakra-ui/icons'
 import logoInicio from '../assets/logo-inicio.png'
 import { Link } from 'react-router-dom'
@@ -15,8 +15,8 @@ const NavBar = () => {
         <div className='container-menu'>
           <div className='logo-inicio'>
             <Link className='inicio' to={"/"}>
-              <img className='logo' src={logoInicio} alt="logo Inicio"/>
-              <p className='p-inicio'>Inicio</p>
+              <Image className='logo' src={logoInicio} alt="logo Inicio"/>
+              <Text className='p-inicio'>Inicio</Text>
             </Link>
           </div>
           <Menu isLazy>
@@ -38,12 +38,10 @@ const NavBar = () => {
         </div>
         <div className='brand-container'>
           <Link to={"/"}>
-          <a className='brand'>Tecno Store</a>
+          <Text className='brand'>Tecno Store</Text>
           </Link>
         </div>
-      <Link to={"/cart"}>
       <CartWidget className='carrito'/>
-      </Link>
       </div>
     </>
   )

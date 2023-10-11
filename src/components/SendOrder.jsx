@@ -2,7 +2,7 @@ import { collection, getFirestore, addDoc } from "firebase/firestore"
 import { useState, useContext } from "react"
 import { CartContext } from "../context/ShoppingCartContext"
 import { useParams } from "react-router-dom"
-import { filter } from "@chakra-ui/react"
+import { filter, Image } from "@chakra-ui/react"
 import '../css/sendOrder.css'
 
 
@@ -41,13 +41,13 @@ const SendOrder = () => {
         <div id="containerForm">
             <h1>Terminando su orden</h1>
             <form id="form" onSubmit={handleSubmit}>
-                <input className="input" type="text" placeholder="Nombre y Apellido"
+                <input className="input" required type="text" placeholder="Nombre y Apellido"
                     onChange={(e) => setName(e.target.value)}
                     />
-                <input className="input" type="email" placeholder="Email"
+                <input className="input" required type="email" placeholder="Email"
                     onChange={(e) => setEmail(e.target.value)}
                     />
-                <input className="input" type="tel" placeholder="Numero de Telefono"
+                <input className="input" required type="number" placeholder="Numero de Telefono"
                     onChange={(e) => setNum(e.target.value)}
                     />
                 <button id="btnComprar" type="submit">Comprar</button>
@@ -57,8 +57,11 @@ const SendOrder = () => {
         <div id="containerMiniCart">
             {filterProducts.map ((p) => {
                 return (
-                    <div id="miniCart">
-                        <image src={p.image}/>
+                    <div key={p.id} id="miniCart">
+                        <Image src={p.image} 
+                        boxSize='50px'
+                        borderRadius='full'
+                        />
                         <h1 className="h">{p.name}</h1>
                         <h2 className="h">Precio: ${p.price}</h2>
                         <h2 className="h">Subtotal: ${p.subTotal}</h2>
